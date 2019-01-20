@@ -99,12 +99,13 @@ if __name__ == "__main__":
                 temp = obj.read_tmperature()
                 humid = obj.read_humidity()
                 curdttm = time.strftime("%m/%d/%Y %H:%M:%S")
+                file_exists = os.path.isfile('/home/pi/templog.csv')
                 with open('/home/pi/templog.csv','a') as csvfile:
+                        csvwriter = csv.writer(csvfile,delimiter=',',
+                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
                         headers = ['time','temperature','humidity']
                         writer = csv.DictWriter(csvfile, delimiter=',', lineterminator='\n',fieldnames=headers)
                         if not file_exists:
                            writer.writeheader()
-                        csvwriter = csv.writer(csvfile,delimiter=',',
-                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
                         csvwriter.writerow([curdttm,temp,humid])
                 time.sleep(30)
