@@ -53,13 +53,14 @@ while True:
     #print('| {0:>6} | {1:>6} | {2:>6} | {3:>6} |'.format(*values))
     moisture = adc.read_adc(2, gain=GAIN)
     curdttm = time.strftime("%m/%d/%Y %H:%M:%S")
+    file_exists = os.path.isfile('/home/pi/moisturelog.csv')
     with open('/home/pi/moisturelog.csv','a') as csvfile:
+      csvwriter = csv.writer(csvfile,delimiter=',',
+      quotechar='|', quoting=csv.QUOTE_MINIMAL)
       headers = ['time','moisture_level']
       writer = csv.DictWriter(csvfile, delimiter=',', lineterminator='\n',fieldnames=headers)
       if not file_exists:
         writer.writeheader()
-      csvwriter = csv.writer(csvfile,delimiter=',',
-      quotechar='|', quoting=csv.QUOTE_MINIMAL)
       csvwriter.writerow([curdttm,moisture])
     # Pause for 30 seconds.
     time.sleep(30)
