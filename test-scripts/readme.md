@@ -4,7 +4,7 @@ http://www.davidhunt.ie/water-droplet-photography-with-raspberry-pi/ - solenoid 
 http://openlabtools.eng.cam.ac.uk/Resources/Datalog/RPi_Arduino/ - Rpi - Arduino data logging
 https://www.instructables.com/id/Raspberry-Pi-Cam-Pan-Tilt-Control-Over-Local-Inter/ - PTZ servo for pi camera
 https://raspberrypi.stackexchange.com/questions/51621/installing-all-python-modules - installing all python modules
-https://www.stuffaboutcode.com/2012/10/raspberry-pi-python-installing-modules.html - Python "setuptools" install instructions
+https://www.stuffaboutcode.com/2012/10/raspberry-pi-python-installing-modules.html - Python "setuptools" install
 https://tutorials-raspberrypi.com/digital-raspberry-pi-scale-weight-sensor-hx711/ - Load Scale Instructions
 https://www.raspberrypi.org/documentation/linux/software/python.md - Raspberry Pi install instructions on Python
 https://www.element14.com/community/community/design-challenges/vertical-farming/blog/2016/01/08/automated-green-house-blog134--ph-control-ph-probe-lcd-readout-gui-probe-health-readout - Michael Rattcliffe's PH sensor instructions
