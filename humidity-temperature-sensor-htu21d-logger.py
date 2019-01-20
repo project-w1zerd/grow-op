@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import struct, array, time, io, fcntl, csv
+import struct, array, time, io, fcntl, csv, os
 
 I2C_SLAVE=0x0703
 HTU21D_ADDR = 0x40
@@ -100,6 +100,10 @@ if __name__ == "__main__":
                 humid = obj.read_humidity()
                 curdttm = time.strftime("%m/%d/%Y %H:%M:%S")
                 with open('/home/pi/templog.csv','a') as csvfile:
+                        headers = ['time','temperature','humidity']
+                        writer = csv.DictWriter(csvfile, delimiter=',', lineterminator='\n',fieldnames=headers)
+                        if not file_exists:
+                           writer.writeheader()
                         csvwriter = csv.writer(csvfile,delimiter=',',
                         quotechar='|', quoting=csv.QUOTE_MINIMAL)
                         csvwriter.writerow([curdttm,temp,humid])
