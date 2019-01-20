@@ -1,2 +1,2 @@
 # Splunk grow-op
-Various project and code related to automating plant growth in Splunk.
+Various projects and code related to automating plant growth in Splunk.
