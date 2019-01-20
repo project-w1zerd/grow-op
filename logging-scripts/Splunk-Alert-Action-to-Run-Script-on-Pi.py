@@ -1,6 +1,13 @@
 # encoding = utf-8
 # Author: Padraic Canavan
 
+# This script is meant to be used as an Alert Action in Splunk.
+# Use the add-on builder and copy and paste this code into the
+# alert-action "Code" area. Next create a script to do whatever 
+# you can think of on a raspberry pi in the /home/pi directory.
+# Finally plug your pi's login detais and ip into the script 
+# below as well as the path to the script. Voila
+
 def process_event(helper, *args, **kwargs):
     import paramiko
     import time
