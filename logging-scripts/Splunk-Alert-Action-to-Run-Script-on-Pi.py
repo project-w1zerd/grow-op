@@ -7,7 +7,7 @@ def process_event(helper, *args, **kwargs):
 
     cli = paramiko.client.SSHClient()
     cli.set_missing_host_key_policy(paramiko.client.AutoAddPolicy())
-    cli.connect(hostname="10.0.1.34", username="pi", password="raspberry")
+    cli.connect(hostname="10.0.1.X", username="pi", password="raspberry")
     stdin_, stdout_, stderr_ = cli.exec_command("python ~/script1.py")
     # time.sleep(2)    # Previously, I had to sleep for some time.
     stdout_.channel.recv_exit_status()
